@@ -23,5 +23,9 @@
   "bugs": {
     "url": "https://github.com/bennewton999/bennewton/issues"
   },
-  "homepage": "https://github.com/bennewton999/bennewton#readme"
+  "homepage": "https://github.com/bennewton999/bennewton#readme",
+  "dependencies": {
+    "cfonts": "^2.3.0",
+    "image-to-ascii": "^3.0.11"
+  }
 }
