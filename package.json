@@ -3,16 +3,16 @@
   "version": "0.0.1",
   "description": "Ben Newton Information",
   "main": "index.js",
+  "bin": {
+    "bennewton": "./index.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "Ben",
-    "Newton",
-    "programmer",
-    "front",
-    "end",
-    "developer"
+    "contact",
+    "Ben Newton",
+    "business card"
   ],
   "author": "Ben Newton",
   "license": "ISC",

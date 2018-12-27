@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const cfonts = require('cfonts');
 const imageToAscii = require('image-to-ascii');
 
