@@ -1,54 +1,51 @@
 #! /usr/bin/env node
 
 const cfonts = require('cfonts');
+const boxen = require('boxen');
 const data = require('./myData.js');
 const me = require('./me');
 
 const showName = name => {
-  cfonts.say(name, {
+  const bigName = cfonts.render(name, {
     colors: ['white', 'yellow']
   });
+
+  return bigName.string;
 };
 
-const showMe = () => {
-  console.log(me);
-};
+const showMe = () => me;
 
-const showLocation = () => {
-  console.log(`🌆  ${data.userLocation}\n`);
-};
+const showLocation = () => `🌆   ${data.userLocation} \n`;
 
-const showWebSite = () => {
-  console.log(`🕸  ${data.siteUrl}\n`);
-};
+const showWebSite = () => `🕸   ${data.siteUrl}\n`;
 
-const showJobDescription = () => {
-  console.log(`👨‍💻  ${data.jobDescription}\n`);
-};
+const showJobDescription = () => `💻   ${data.jobDescription} \n`;
 
-const showDescription = () => {
-  console.log(`${data.userDescription}\n`);
-};
+const showDescription = () => `${data.userDescription} \n`;
 
-showLinks = () => {
-  data.userLinks.map(link => console.log(`${link.label}: ${link.url}`));
-  console.log('\n');
-};
+const showLinks = () =>
+  data.userLinks.map(link => `${link.label}: ${link.url}\n`);
 
-showCommand = () => {
-  console.log(`$ npx ${data.packageName}`);
-};
+showCommand = () => `$ npx ${data.packageName}\n`;
 
-const showData = () => {
-  console.log(data);
-};
+const displayAll = () => `
+${showMe()}
 
-showMe();
-showName(`${data.name.first} ${data.name.last}`);
-showJobDescription();
-showLocation();
-showDescription();
-showWebSite();
-showLinks();
-showCommand();
-// showData();
+${showName(`${data.name.first} ${data.name.last}`)}
+
+${showWebSite()}
+
+${showJobDescription()}
+
+${showLocation()}
+
+${showDescription()}
+
+${showLinks()}
+
+${showCommand()}
+`;
+
+console.log(
+  boxen(displayAll(), { padding: 1, margin: 1, borderStyle: 'round' })
+);

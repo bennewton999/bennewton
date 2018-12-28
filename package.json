@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/bennewton999/bennewton#readme",
   "dependencies": {
+    "boxen": "^2.1.0",
     "cfonts": "^2.3.0"
   }
 }
