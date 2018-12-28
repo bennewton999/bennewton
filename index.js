@@ -1,49 +1,17 @@
 #! /usr/bin/env node
 
 const cfonts = require('cfonts');
-const imageToAscii = require('image-to-ascii');
-const ora = require('ora');
 const data = require('./myData.js');
-
-const spinner = ora({
-  text: `Getting ${data.name.first}'s picture`,
-  spinner: 'clock'
-});
-
-spinner.start();
-
-imageToAscii(
-  data.siteLogo,
-  {
-    // pixels: '█',
-    // size: { height: '50%' },
-    size_options: { screen_size: { height: 50, width: 50 } },
-    fit_screen: false
-  },
-  (err, converted) => {
-    spinner.succeed('Done');
-    // console.log(err || converted);
-    showImage(converted);
-    showName(`${data.name.first} ${data.name.last}`);
-    showJobDescription();
-    showLocation();
-    showDescription();
-    showWebSite();
-    showLinks();
-    showCommand();
-    // showData();
-  }
-);
+const me = require('./me');
 
 const showName = name => {
   cfonts.say(name, {
-    //   font: 'huge',
     colors: ['white', 'yellow']
   });
 };
 
-const showImage = imageContents => {
-  console.log(imageContents);
+const showMe = () => {
+  console.log(me);
 };
 
 const showLocation = () => {
@@ -74,3 +42,13 @@ showCommand = () => {
 const showData = () => {
   console.log(data);
 };
+
+showMe();
+showName(`${data.name.first} ${data.name.last}`);
+showJobDescription();
+showLocation();
+showDescription();
+showWebSite();
+showLinks();
+showCommand();
+// showData();
