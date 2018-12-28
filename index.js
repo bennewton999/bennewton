@@ -24,7 +24,7 @@ const showJobDescription = () => `💻   ${data.jobDescription} \n`;
 const showDescription = () => `${data.userDescription} \n`;
 
 const showLinks = () =>
-  data.userLinks.map(link => `${link.label}: ${link.url}\n`);
+  data.userLinks.map(link => `${link.label}: ${link.url}\n`).join('');
 
 showCommand = () => `$ npx ${data.packageName}\n`;
 
