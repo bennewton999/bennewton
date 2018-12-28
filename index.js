@@ -68,7 +68,7 @@ showLinks = () => {
 };
 
 showCommand = () => {
-  console.log(`$ ${data.packageName}`);
+  console.log(`$ npx ${data.packageName}`);
 };
 
 const showData = () => {
