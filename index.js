@@ -2,6 +2,7 @@
 
 const cfonts = require('cfonts');
 const boxen = require('boxen');
+const chalk = require('chalk');
 const data = require('./myData.js');
 const me = require('./me');
 
@@ -24,11 +25,13 @@ const showJobDescription = () => `💻   ${data.jobDescription} \n`;
 const showDescription = () => `${data.userDescription} \n`;
 
 const showLinks = () =>
-  data.userLinks.map(link => `${link.label}: ${link.url}\n`).join('');
+  data.userLinks
+    .map(link => chalk`{gray ${link.label}:} {yellow ${link.url}}\n`)
+    .join('');
 
-showCommand = () => `$ npx ${data.packageName}\n`;
+showCommand = () => chalk`{yellow $} {green npx ${data.packageName}}\n`;
 
-const displayAll = () => `
+const displayAll = () => chalk`
 ${showMe()}
 
 ${showName(`${data.name.first} ${data.name.last}`)}
