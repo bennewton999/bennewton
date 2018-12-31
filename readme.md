@@ -4,4 +4,6 @@
 
 My take on the NPX me contact card.
 
-`npx bennewton`
+To run - `npx bennewton`
+
+To make your own, fork this Repo and update the myData.js, add ascii art to asciiArt.js or leave file empty. When updated, publish to npm as your own new package.

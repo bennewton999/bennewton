@@ -4,7 +4,7 @@ const cfonts = require('cfonts');
 const boxen = require('boxen');
 const chalk = require('chalk');
 const data = require('./myData.js');
-const me = require('./me');
+const asciiArt = require('./asciiArt');
 
 const showName = name => {
   const bigName = cfonts.render(name, {
@@ -14,15 +14,15 @@ const showName = name => {
   return bigName.string;
 };
 
-const showMe = () => me;
+const showAsciiArt = () => asciiArt;
 
-const showLocation = () => `🌆   ${data.userLocation} \n`;
+const showLocation = () => `🌆   ${data.location} \n`;
 
 const showWebSite = () => `🕸   ${data.siteUrl}\n`;
 
 const showJobDescription = () => `💻   ${data.jobDescription} \n`;
 
-const showDescription = () => `${data.userDescription} \n`;
+const showDescription = () => `${data.description} \n`;
 
 const showLinks = () =>
   data.userLinks
@@ -31,8 +31,8 @@ const showLinks = () =>
 
 showCommand = () => chalk`{yellow $} {green npx ${data.packageName}}\n`;
 
-const displayAll = () => chalk`
-${showMe()}
+const displayAll = () => `
+${showAsciiArt()}
 
 ${showName(`${data.name.first} ${data.name.last}`)}
 
